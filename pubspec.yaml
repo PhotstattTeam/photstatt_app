@@ -30,10 +30,28 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+
+  # 网络请求
+  dio: ^5.11.1
+  # 国际化 / 日期与数字格式化（flutter_localizations 依赖的版本）
+  intl: ^0.20.3
+
+  # Apple 风格 UI 组件库（LumarisTeam）
+  luamris_ui:
+    git:
+      url: https://github.com/LumarisTeam/luamris_ui
+      ref: v0.5.4
+
+  # Flutter 3.47 起 Material / Cupertino 拆分出的独立包，
+  # 需要与 luamris_ui 使用同一套类型，直接引入。
+  material_ui: ^1.11.1
+  cupertino_ui: ^1.1.7
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +69,9 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+
+  # 启用 ARB 本地化代码生成（lib/l10n/*.arb -> AppLocalizations）
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

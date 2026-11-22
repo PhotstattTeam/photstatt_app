@@ -1,0 +1,13 @@
+{
+  "@@locale": "zh",
+  "appTitle": "Photstatt",
+  "welcomeTitle": "欢迎使用 luamris_ui",
+  "welcomeDescription": "Apple 风格组件库已接入，亮色 / 暗色主题会自动切换。",
+  "themeMode": "主题模式",
+  "themeLight": "当前：亮色",
+  "themeDark": "当前：暗色",
+  "primaryColor": "主色",
+  "primaryColorValue": "iOS 系统蓝 #007AFF",
+  "primaryButton": "主按钮",
+  "secondaryButton": "次要按钮"
+}

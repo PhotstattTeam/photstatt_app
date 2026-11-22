@@ -1,0 +1,25 @@
+{
+  "@@locale": "en",
+  "appTitle": "Photstatt",
+  "@appTitle": {
+    "description": "Application name shown by the OS task switcher."
+  },
+  "welcomeTitle": "Welcome to luamris_ui",
+  "@welcomeTitle": {
+    "description": "Title of the welcome card on the home page."
+  },
+  "welcomeDescription": "Apple-style components are integrated, and light / dark themes switch automatically.",
+  "@welcomeDescription": {
+    "description": "Subtitle of the welcome card on the home page."
+  },
+  "themeMode": "Theme mode",
+  "@themeMode": {
+    "description": "List row title for switching between light and dark themes."
+  },
+  "themeLight": "Current: Light",
+  "themeDark": "Current: Dark",
+  "primaryColor": "Primary color",
+  "primaryColorValue": "iOS system blue #007AFF",
+  "primaryButton": "Primary button",
+  "secondaryButton": "Secondary button"
+}
