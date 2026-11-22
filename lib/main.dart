@@ -2,8 +2,6 @@ import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:luamris_ui/luamris_ui.dart';
 import 'package:material_ui/material_ui.dart';
 
-import 'l10n/app_localizations.dart';
-
 void main() {
   runApp(const PhotstattApp());
 }
@@ -33,11 +31,8 @@ class _PhotstattAppState extends State<PhotstattApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
+      title: 'Photstatt',
       debugShowCheckedModeBanner: false,
-      // 国际化：框架组件（日期选择、返回按钮等）与业务文案都支持中英文。
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
       themeMode: _themeMode,
       theme: McThemeData.materialTheme(McColors.light),
       darkTheme: McThemeData.materialTheme(McColors.dark),
@@ -55,11 +50,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final m = context.mc;
-    final l10n = AppLocalizations.of(context);
     final isDark = m.brightness == Brightness.dark;
 
     return McPageScaffold(
-      title: l10n.appTitle,
+      title: 'Photstatt',
       trailing: McButton.ghost(
         onPressed: () => onToggleTheme(isDark),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -75,9 +69,12 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(l10n.welcomeTitle, style: m.textTitle),
+                Text('欢迎使用 luamris_ui', style: m.textTitle),
                 const SizedBox(height: 8),
-                Text(l10n.welcomeDescription, style: m.textMuted),
+                Text(
+                  'Apple 风格组件库已接入，亮色 / 暗色主题会自动切换。',
+                  style: m.textMuted,
+                ),
               ],
             ),
           ),
@@ -87,15 +84,15 @@ class HomePage extends StatelessWidget {
               children: [
                 McListTile(
                   leading: Icon(CupertinoIcons.paintbrush, color: m.primary),
-                  title: Text(l10n.themeMode),
-                  subtitle: Text(isDark ? l10n.themeDark : l10n.themeLight),
+                  title: const Text('主题模式'),
+                  subtitle: Text(isDark ? '当前：暗色' : '当前：亮色'),
                   showChevron: true,
                   onTap: () => onToggleTheme(isDark),
                 ),
                 McListTile(
                   leading: Icon(CupertinoIcons.drop, color: m.indigo),
-                  title: Text(l10n.primaryColor),
-                  subtitle: Text(l10n.primaryColorValue),
+                  title: const Text('主色'),
+                  subtitle: const Text('iOS 系统蓝 #007AFF'),
                   showChevron: true,
                   onTap: () {},
                 ),
@@ -105,12 +102,12 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 16),
           McButton.primary(
             onPressed: () {},
-            child: Text(l10n.primaryButton),
+            child: const Text('主按钮'),
           ),
           const SizedBox(height: 12),
           McButton.secondary(
             onPressed: () {},
-            child: Text(l10n.secondaryButton),
+            child: const Text('次要按钮'),
           ),
         ],
       ),

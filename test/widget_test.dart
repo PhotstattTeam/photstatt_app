@@ -10,7 +10,7 @@ void main() {
   ) async {
     await tester.pumpWidget(const PhotstattApp());
 
-    expect(find.text('Welcome to luamris_ui'), findsOneWidget);
-    expect(find.text('Primary button'), findsOneWidget);
+    expect(find.text('欢迎使用 luamris_ui'), findsOneWidget);
+    expect(find.text('主按钮'), findsOneWidget);
   });
 }
